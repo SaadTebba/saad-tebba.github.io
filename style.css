@@ -153,6 +153,37 @@ main {
   padding-bottom: 15px;
 }
 
+/*! HERE IS YOUR BREADCRUMB STYLES ============================================================================= **/
+
+.breadcrumb-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.breadcrumb-button:hover {
+  background: rgba(100, 40, 227, 0.8);
+}
+
+.breadcrumb-button i {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 992px) {
+  .breadcrumb-button {
+    display: block;
+  }
+}
+
 /* ! Section 1 - About my self ============================================================================= **/
 
 
@@ -180,6 +211,8 @@ main {
   object-fit: cover;
 }
 
+/* Remove this block as it's duplicated */
+
 
 /** :::::::::: Boxes Colors :::::::::: **/
 
@@ -202,7 +235,14 @@ main {
 
 /*! Section 2 - Services & Expertise ============================================================================= **/
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.row>[class*='col-'] {
+  display: flex;
+}
 
 /** :::::::::: Cards Style :::::::::: **/
 
@@ -214,6 +254,11 @@ main {
   position: relative;
   background-color: #131426;
   color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardy:hover {
@@ -613,8 +658,8 @@ main {
   transition: .5s;
 }
 
-.login-box .user-box input:focus~label,
-.login-box .user-box input:valid~label {
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
   color: #bdb8b8;
@@ -668,4 +713,149 @@ main {
   height: 2px;
   background: linear-gradient(90deg, transparent, #6428E3);
   animation: btn-anim1 2s linear infinite;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .modal-content {
+    min-width: 100%;
+  }
+
+  .about-me-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row .col-3 {
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  .row .col-3 .cardy {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-text-100vh {
+    font-size: 3rem;
+  }
+
+  .login-box {
+    width: 60%;
+  }
+
+.main-text-100vh {
+    font-size: 3rem;
+  }
+
+  .login-box {
+    width: 60%;
+  }
+}
+
+/* About section responsive */
+@media screen and (min-width: 993px) {
+  #about .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #about .row {
+    flex-direction: column;
+  }
+
+  #about .row > * {
+    width: 100%;
+  }
+
+  .about-me-img {
+    width: 100%;
+    max-width: 617px;
+    height: auto;
+    margin: 0 auto 30px;
+    order: -1; /* This moves the image to the top on mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .main-section-titles,
+  .main-section-titles-aboutmyself {
+    font-size: 1.75rem;
+  }
+
+  .row .col-3 {
+    width: 100%;
+    display: flex;
+  }
+
+  .row .col-3 .cardy {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .my-info-span {
+    position: relative;
+    left: 0;
+    margin-left: 10px;
+  }
+
+  .about-us-content {
+    margin-bottom: 10px;
+  }
+
+  .login-box {
+    width: 80%;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .portfolio-img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main-text-100vh {
+    font-size: 2rem;
+  }
+
+  .login-box {
+    width: 95%;
+  }
+
+  .card-titles {
+    font-size: 20px;
+  }
+
+  .button-back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
 }
