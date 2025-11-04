@@ -244,8 +244,6 @@ main {
   object-fit: cover;
 }
 
-/* Remove this block as it's duplicated */
-
 
 /** :::::::::: Boxes Colors :::::::::: **/
 
@@ -255,10 +253,6 @@ main {
   color: rgb(255, 255, 255);
   counter-reset: none;
 }
-
-/* #about {
-  min-height: 100px;
-} */
 
 [data-aos] {
   opacity: 1 !important;
@@ -777,7 +771,7 @@ main {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
   .main-section-titles,
   .main-section-titles-aboutmyself {
