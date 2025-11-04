@@ -110,3 +110,27 @@ $(document).ready(function(){
     } // End if
   });
 });
+
+
+// TODO ========================= Mobile Menu Toggle ==============================
+
+
+// Mobile Menu Toggle
+document.getElementById('checkbox').addEventListener('change', function() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    if (this.checked) {
+        navbarCollapse.classList.add('show');
+    } else {
+        navbarCollapse.classList.remove('show');
+    }
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const checkbox = document.getElementById('checkbox');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        checkbox.checked = false;
+        navbarCollapse.classList.remove('show');
+    });
+});

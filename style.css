@@ -34,7 +34,7 @@ main {
 .lil-title-about-me {
   font-size: 1rem;
   font-weight: bold;
-  color: #6428E3;
+  color: #6428e3;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -79,6 +79,68 @@ main {
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
+
+/** :::::::::: Breadcrumbs :::::::::: **/
+
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  display: none;  /* Hidden by default on all devices */
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
 
 /** :::::::::: 100vh Middle Text :::::::::: **/
 
@@ -153,36 +215,6 @@ main {
   padding-bottom: 15px;
 }
 
-/*! HERE IS YOUR BREADCRUMB STYLES ============================================================================= **/
-
-.breadcrumb-button {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.breadcrumb-button:hover {
-  background: rgba(100, 40, 227, 0.8);
-}
-
-.breadcrumb-button i {
-  font-size: 24px;
-}
-
-@media screen and (max-width: 992px) {
-  .breadcrumb-button {
-    display: block;
-  }
-}
 
 /* ! Section 1 - About my self ============================================================================= **/
 
@@ -326,7 +358,7 @@ main {
 .modal-content {
   background-color: #131426 !important;
   color: white !important;
-  min-width: 240%;
+  min-width: 100%;
 }
 
 .main-modal-div {
@@ -359,7 +391,7 @@ main {
 .project-details-min-titles {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #6428E3;
+  color: #6428e3;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -378,9 +410,20 @@ main {
   margin-bottom: 30px;
 }
 
+.modal-body .row .col-6 {
+  width: 100%;
+  padding: 0;
+}
+
+.modal-body .row .col-6:first-child {
+  margin-bottom: 20px;  /* Add margin between images */
+}
+
 .modals-content-images {
-  height: 300px !important;
+  height: auto !important;
+  width: 100% !important;
   object-fit: cover !important;
+  margin-bottom: 0;
 }
 
 .btn-close-modal {
@@ -552,7 +595,7 @@ main {
 }
 
 .whatsapp {
-  background-color: #25D366;
+  background-color: #25d366;
 }
 
 .whatsapp svg path {
@@ -560,7 +603,7 @@ main {
 }
 
 .whatsapp:hover svg path {
-  fill: #25D366;
+  fill: #25d366;
 }
 
 .upwork {
@@ -579,7 +622,7 @@ main {
 }
 
 .gmail {
-  background-color: #D14836;
+  background-color: #d14836;
 }
 
 .gmail svg path {
@@ -587,7 +630,7 @@ main {
 }
 
 .gmail:hover svg path {
-  fill: #D14836;
+  fill: #d14836;
 }
 
 
@@ -681,13 +724,13 @@ main {
 }
 
 .login-box a:hover {
-  background: #6428E3;
+  background: #6428e3;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #6428E3,
-    0 0 25px #6428E3,
-    0 0 50px #6428E3,
-    0 0 100px #6428E3;
+  box-shadow: 0 0 5px #6428e3,
+    0 0 25px #6428e3,
+    0 0 50px #6428e3,
+    0 0 100px #6428e3;
 }
 
 .login-box a span {
@@ -711,7 +754,7 @@ main {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #6428E3);
+  background: linear-gradient(90deg, transparent, #6428e3);
   animation: btn-anim1 2s linear infinite;
 }
 
@@ -785,7 +828,7 @@ main {
     max-width: 617px;
     height: auto;
     margin: 0 auto 30px;
-    order: -1; /* This moves the image to the top on mobile */
+    order: -1;
   }
 }
 
@@ -828,6 +871,36 @@ main {
 
   .portfolio-img {
     height: 200px;
+  }
+
+  .toggle {
+    display: flex !important;  /* Show only on mobile */
+    margin-right: 15px;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: rgba(19, 20, 38, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+  }
+
+  .navbar-nav {
+    margin-top: 60px;
+  }
+
+  .nav-item {
+    margin: 20px 0;
   }
 }
 
