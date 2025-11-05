@@ -902,3 +902,11 @@ main {
   }
 
 }
+
+.final-text {
+  line-height: 0 !important;
+  font-size: 14px !important;
+  margin: 0% !important;
+  padding: 0% !important;
+  color: white !important;
+}
